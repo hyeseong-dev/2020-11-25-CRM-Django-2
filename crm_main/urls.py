@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from apps.common.views import HomeView, SignUpView, DashboardView, ProfileUpdateView, ProfileView
 from django.contrib.auth import  views as auth_views
 
@@ -57,6 +57,8 @@ urlpatterns = [
         ),
         name='password_reset_complete'),
 
+    # path('oauth/', include('social_django.urls', namespace='social')),
+    path('accounts/',include('allauth.urls')),
 ]
 
 from django.conf import settings

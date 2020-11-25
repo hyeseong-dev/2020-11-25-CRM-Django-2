@@ -33,7 +33,18 @@ THIRD_PARTY_APPS =[
     # add apps which you install using pip
     'crispy_forms',
     'django_cleanup',
+    'social_django',
+    # The following apps are required:
+    'django.contrib.sites',
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
+
+SITE_ID = 1
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4' 
 
@@ -53,6 +64,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'social_django.middleware.SocialAuthExceptionMiddleware',  
 ]
 
 ROOT_URLCONF = 'crm_main.urls'
@@ -68,10 +81,28 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+
+                'social_django.context_processors.backends',  
+                'social_django.context_processors.login_redirect', 
             ],
         },
     },
 ]
+
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.github.GithubOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+
+
 
 WSGI_APPLICATION = 'crm_main.wsgi.application'
 
@@ -145,6 +176,7 @@ except ImportError:
 
 LOGIN_REDIRECT_URL = 'dashboard'
 
+
 # This will print email in Console.
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
@@ -158,5 +190,17 @@ MESSAGE_TAGS = {
     messages.ERROR: 'alert-danger',
 }
 
-SOCIAL_AUTH_FACEBOOK_KEY = '565284834205523'  # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = 'c6b12784c9589a0b3bdfe33114a19688'  # App Secret
+# SOCIAL_AUTH_FACEBOOK_KEY = '3828101357255797'  # App ID
+# SOCIAL_AUTH_FACEBOOK_SECRET = ''  # App Secret
+
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
