@@ -25,6 +25,10 @@
 #### Change Password
 <img src="https://user-images.githubusercontent.com/57933835/100223275-9baa6980-2f5e-11eb-90fc-032962a1f4d9.png" width="400" height="400">
 
+#### Calender
+<img src="https://user-images.githubusercontent.com/57933835/100225842-2d67a600-2f62-11eb-9df0-f114e0232591.png" width="400" height="400">
+
+
 
 ## 설치방법
 * > git clone https://github.com/hyeseong-dev/2020-11-25-CRM-Django-2.git
@@ -34,28 +38,25 @@
 * > python manage.py runserver
 
 ## 기능 
-1. 유저가 등록한 글을 메인 화면 or 다른 유저별로 분류된 글을 볼 수 있음
-2. 로그인, 로그아웃, 회원가입, 비밀번호 리셋
-3. 개인정보, 개인정보 수정(이메일, 프로파일 이미지)
-4. 페이지내이션
-5. 글 포스팅, 글 수정, 글 삭제
+1. 회원가입
+2. 로그인, 로그아웃, 
+3. 비밀번호 찾기, 비밀번호 변경,
+5. 소셜 로그인
+6. 프로파일 변경(전화번호 폼 자동 변경, 생년월일 변경시 캘린더 사용 )
 
 
 
 ## Q&A
-* https://github.com/hyeseong-dev/2020-09-18-blog-web-django/issues
+* https://github.com/hyeseong-dev/2020-11-25-CRM-Django-2/issues
 
 ## 프로젝트 참여방법
 * email : hyeseong43@gmail.com
 
 ## From Youtube
-[Codemy.com - Create A Simple Django Blog](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi)
-[Corey Schafer - Python Django Tutorial](https://www.youtube.com/watch?v=UmljXZIypDc&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p)
-[JustDjango - Build any blog with Django](https://www.youtube.com/watch?v=HWg3zXWwre8)
-[OnLifeCoding - How to Django로 블로그 만들어보기 ](https://www.youtube.com/watch?v=jS4fLseF_cs&t=6s)
-
 
 ## 참고 문헌
-[Django official documents](https://docs.djangoproject.com/en/3.1/)
-[신김이뭐했니](https://numucuwer.tistory.com/14)
-[real pyton](https://realpython.com/get-started-with-django-1/)
+#### Django official documents -https://docs.djangoproject.com/en/3.1/
+#### django-allauth - https://numucuwer.tistory.com/14
+#### django cleanup - https://pypi.org/project/django-cleanup/
+#### django crispy form - https://django-crispy-forms.readthedocs.io/en/latest/install.html
+#### django pillow - https://pillow.readthedocs.io/en/stable/installation.html
